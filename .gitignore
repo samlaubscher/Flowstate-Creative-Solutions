@@ -1,5 +1,7 @@
+*.sqlite3
+*.pyc
 __pycache__
 venv/
 .env
 .vscode/* 
-!.vscode/settings.json 
+!.vscode/settings.json
