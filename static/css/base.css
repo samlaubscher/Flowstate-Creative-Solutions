@@ -3,11 +3,21 @@ html {
 }
 
 body {
-    background: url('https://images.unsplash.com/photo-1562876782-f324b8ac8e4c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 164px);
     color: #555;
     font-family: 'Rubik', sans-serif;
+}
+
+.image-container {
+    width: 80%;
+    margin: auto;
+    padding-top: 117px;
+}
+
+.background {
+    background: url('https://images.unsplash.com/photo-1551288449-085e5252e44e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    height: calc(100vh - 117px);
+    width: 100%;
 }
 
 /* from Bulma */
@@ -19,6 +29,10 @@ body {
     width: 1.5rem;
 }
 
+#main-nav-logo {
+    max-width: 65%;
+}
+
 .logo-font {
     text-transform: uppercase;
 }
@@ -28,8 +42,8 @@ body {
 }
 
 .shop-now-button {
-    background: black;
-    color: white;
+    background: white;
+    color: black;
     min-width: 260px;
 }
 
@@ -76,6 +90,6 @@ body {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 117px;
     }
 }
