@@ -70,6 +70,13 @@ body {
     border: 1px solid black !important;
 }
 
+.card-img-top {
+    object-position: center;
+    object-fit: cover;
+    height: 260px;
+    width: 100%;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
