@@ -39,14 +39,14 @@
       <div class="row bg-white pt-lg-2 d-none d-lg-flex" id="topnav">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="nav-link main-logo-link">
-            <img src="media/flowstate.png" alt="Logo" id="main-nav-logo">
+            <img src="{{ MEDIA_URL}}flowstate.png" alt="Logo" id="main-nav-logo">
           </a>
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-          <form method="GET" action="">
+          <form method="GET" action="{% url 'products' %}">
             <div class="p-1 bg-light rounded rounded-pill shadow-sm my-auto">
             <div class="input-group">
-              <input type="search" class="form-control border-0 bg-light" placeholder="Search our site" aria-describedby="search">
+              <input type="search" name="q" class="form-control border-0 bg-light" placeholder="Search our site" aria-describedby="search">
               <div class="input-group-append">
                 <button id="search" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
               </div>

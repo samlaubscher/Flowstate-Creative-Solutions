@@ -5,27 +5,27 @@
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item ">By Category</a>
-                <a href="" class="dropdown-item">All Products</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                <a href="{% url 'products' %}?category=tools,midi_devices,special_offer" class="dropdown-item">All Products</a>
             </div>
         </li>
 
         <li class="nav-item">
-            <a href="" class="logo-font font-weight-bold nav-link text-black mr-3">
+            <a href="{% url 'products' %}?category=tools" class="logo-font font-weight-bold nav-link text-black mr-3">
                 Tools
             </a>
         </li>
 
         <li class="nav-item">
-            <a href="" class="logo-font font-weight-bold nav-link text-black mr-3">
+            <a href="{% url 'products' %}?category=midi_devices" class="logo-font font-weight-bold nav-link text-black mr-3">
                 MIDI Devices
             </a>
         </li>
 
         <li class="nav-item">
-            <a href="" class="logo-font font-weight-bold nav-link text-black mr-3">
+            <a href="{% url 'products' %}?category=special_offer" class="logo-font font-weight-bold nav-link text-black mr-3">
                 Special Offers
             </a>
         </li>
