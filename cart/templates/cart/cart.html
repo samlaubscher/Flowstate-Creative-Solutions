@@ -18,21 +18,21 @@
                 <hr>
             </div>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col">
-            {% if cart_items %}
-                <div class="table-responsive rounded"></div>
-            {% else %}
-                <p class="lead mb-5">Your cart is empty.</p>
-                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                    <span class="icon">
-                        <i class="fas fa-chevron-left"></i>
-                    </span>
-                    <span class="text-uppercase">Keep Shopping</span>
-                </a>
-            {% endif %}
+    
+        <div class="row">
+            <div class="col">
+                {% if cart_items %}
+                    <div class="table-responsive rounded"></div>
+                {% else %}
+                    <p class="lead mb-5">Your cart is empty.</p>
+                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase">Keep Shopping</span>
+                    </a>
+                {% endif %}
+            </div>
         </div>
     </div>
 {% endblock %}
