@@ -103,7 +103,8 @@ a.category-badge > span.badge:hover {
     right: 10px;
 }
 
-.btt-link {
+.btt-link,
+.remove-item {
     cursor: pointer;
 }
 
