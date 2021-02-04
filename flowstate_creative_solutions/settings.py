@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'home',
     'products',
     'cart',
+    'checkout',
 ]
 
 MIDDLEWARE = [
@@ -172,4 +173,4 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DISCOUNT_CODE = env('DISCOUNT_CODE')
-DISCOUNT_CODE_PERCENTAGE = 10
+DISCOUNT_PERCENTAGE = env('DISCOUNT_PERCENTAGE')
