@@ -16,14 +16,14 @@ class OrderAdmin(admin.ModelAdmin):
     )
 
     fields = (
-        'order_number', 'date', 'name',
+        'order_number', 'date',
         'username', 'email', 'discount_code',
         'order_total', 'discount_total', 
         'grand_total',
     )
 
     list_display = (
-        'order_number', 'date', 'name',
+        'order_number', 'date',
         'order_total', 'discount_total', 
         'grand_total',
     )

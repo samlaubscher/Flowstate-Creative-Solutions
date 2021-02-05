@@ -9,7 +9,6 @@ from products.models import Product
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
-    name = models.CharField(max_length=32, null=True, blank=True)
     username = models.CharField(max_length=32, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     discount_code = models.CharField(max_length=32, null=True, blank=True)
