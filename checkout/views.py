@@ -9,6 +9,9 @@ def checkout(request):
         return redirect(reverse('products'))
     
     template = 'checkout/checkout.html'
-    context = {}
+    context = {
+        'stripe_public_key': 'pk_test_51I8qG6LaOwFXT33QWluNoimDTUapwNgy3udGh4YB2UNK9yI7ruffaWY7m9kSSOZCzVaVPiwyzpjZCfWplD4FsnJv00oO7PvxVu',
+        'client_secret': 'test client secret',
+    }
 
     return render(request, template, context)
