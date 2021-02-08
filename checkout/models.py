@@ -28,7 +28,7 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         accounting for discounts
         """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.discount_code:
             self.discount_total = self.order_total * settings.DISCOUNT_PERCENTAGE / 100
         else:
