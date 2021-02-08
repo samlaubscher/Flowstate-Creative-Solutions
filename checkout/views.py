@@ -15,7 +15,12 @@ def checkout(request):
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
-        order = Order() # this is not correct 
+        order = Order(
+            username=request.user.username,
+            email=request.user.email,
+            discount_code='discount-code-example'
+        )
+        order.save()
 
         for item_id, quantity in cart.items():
             try:
