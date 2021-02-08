@@ -18,7 +18,7 @@ def cache_checkout_data(request):
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
             'cart': json.dumps(request.session.get('cart', {})),
-            'username': request.user.username,
+            'user': request.user.username,
             'email': request.user.email,
         })
         return HttpResponse(status=200)
@@ -38,7 +38,10 @@ def checkout(request):
             username=request.user.username,
             email=request.user.email,
             discount_code='discount-code-example'
-        )
+            )
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        order.stripe_pid = pid
+        order.original_cart = json.dumps(cart)
         order.save()
 
         for item_id, quantity in cart.items():
