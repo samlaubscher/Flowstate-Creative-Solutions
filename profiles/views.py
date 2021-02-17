@@ -7,10 +7,11 @@ def profile(request):
     """ Display user profile """
 
     profile = get_object_or_404(UserProfile, user=request.user)
+    orders = profile.orders.all()
 
     template = 'profiles/profile.html'
     context = {
-        'profile': profile,
+        'orders': orders,
     }
 
     return render(request, template, context)
