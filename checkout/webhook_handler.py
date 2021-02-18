@@ -2,6 +2,7 @@ from django.http import HttpResponse
 
 from .models import Order, OrderLineItem
 from products.models import Product
+from profiles.models import UserProfile
 
 import json
 import time
@@ -31,6 +32,8 @@ class StripeWH_Handler:
         print(intent)
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
+        profile = UserProfile.objects.get(user__username=user)
+
         order_exists = False
         attempt = 1
         while attempt <= 5:
@@ -56,6 +59,7 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.create(
                     username=user,
+                    user_profile=profile,
                     email=email,
                     original_cart=cart,
                     stripe_pid=pid,
