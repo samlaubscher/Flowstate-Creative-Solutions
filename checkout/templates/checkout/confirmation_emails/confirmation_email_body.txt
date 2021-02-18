@@ -1,0 +1,20 @@
+Hey {{ order.username }}!
+
+This is a confirmation of your order at Flowstate Creative Solutions.
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: £{{ order.order_total }}
+Discount: £{{ order.discount_total }}
+Grand Total: £{{ order.grand_total }}
+
+All purchased software is available for download in your Flowstate user account under Purchased Products.
+
+If you have issues downloading software or have any questions, please feel free to contact me using the contact form on the Flowstate website.
+
+Thanks for the support!
+
+Sincerely,
+
+Josh - Flowstate Creative Solutions
