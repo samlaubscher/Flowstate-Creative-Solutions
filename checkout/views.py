@@ -5,6 +5,7 @@ from django.conf import settings
 
 from .models import Order, OrderLineItem
 from products.models import Product
+from profiles.models import UserProfile
 from cart.contexts import cart_contents
 
 import stripe
@@ -91,8 +92,17 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
-
+    """
+    Handle successful checkouts
+    """
     order = get_object_or_404(Order, order_number=order_number)
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        order.user_profile = profile
+        order.save()
+
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
