@@ -38,7 +38,14 @@
                                     <tr>
                                         <td class="border-0 w-25">
                                             <div class="p-2">
-                                                <img src="{{ item.product.image.url }}" alt="" width="170" class="img-fluid rounded shadow-sm">
+                                            {% if item.product.image %}
+                                                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" 
+                                                    width="170" class="img-fluid rounded shadow-sm">
+                                            {% else %}
+                                                <img src="{{ item.product.image.url }}" alt="{{ MEDIA_URL }}noimage.png" 
+                                                    width="170" class="img-fluid rounded shadow-sm">
+                                            {% endif %}
+                                                
                                             </div>
                                         </td>
                                         <td class="py-3">
