@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 import environ
+import dj_database_url
+
 from pathlib import Path
 
 
@@ -127,15 +129,19 @@ WSGI_APPLICATION = 'flowstate_creative_solutions.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': env('DATABASE_NAME'),
+#        'USER': env('DATABASE_USER'),
+#        'PASSWORD': env('DATABASE_PASSWORD'),
+#       'HOST': env('HOST'),
+#        'PORT': env('PORT'),
+#   }
+#}
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DATABASE_NAME'),
-        'USER': env('DATABASE_USER'),
-        'PASSWORD': env('DATABASE_PASSWORD'),
-        'HOST': env('HOST'),
-        'PORT': env('PORT'),
-    }
+    'default': dj_database_url.parse('postgres://hvxbuqpcucuioi:faaa32d574b79ad04aa0856cf32df012e6b9058b8a78a97eaf25d40baad371ba@ec2-108-128-104-50.eu-west-1.compute.amazonaws.com:5432/dbs4bnsru00kie')
 }
 
 
