@@ -35,7 +35,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '62e9dc6cce61.ngrok.io']
+ALLOWED_HOSTS = ['flowstate-creative-solutions.herokuapp.com', '127.0.0.1', 'localhost', '62e9dc6cce61.ngrok.io']
 
 
 # Application definition
@@ -129,21 +129,21 @@ WSGI_APPLICATION = 'flowstate_creative_solutions.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': env('DATABASE_NAME'),
-#        'USER': env('DATABASE_USER'),
-#        'PASSWORD': env('DATABASE_PASSWORD'),
-#       'HOST': env('HOST'),
-#        'PORT': env('PORT'),
-#   }
-#}
-
-DATABASES = {
-    'default': dj_database_url.parse('postgres://hvxbuqpcucuioi:faaa32d574b79ad04aa0856cf32df012e6b9058b8a78a97eaf25d40baad371ba@ec2-108-128-104-50.eu-west-1.compute.amazonaws.com:5432/dbs4bnsru00kie')
-}
-
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+    'default': dj_database_url.parse(env('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': env('DATABASE_NAME'),
+            'USER': env('DATABASE_USER'),
+            'PASSWORD': env('DATABASE_PASSWORD'),
+            'HOST': env('HOST'),
+            'PORT': env('PORT'),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

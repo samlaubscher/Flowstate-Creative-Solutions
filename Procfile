@@ -1,0 +1,1 @@
+web: gunicorn flowstate_creative_solutions.wsgi:application
