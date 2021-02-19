@@ -112,9 +112,6 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-# Log emails to console to retrieve confirmation links - DEVELOPMENT ONLY
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 # Login parameters
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -221,4 +218,14 @@ STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
 STRIPE_WH_SECRET = env('STRIPE_WH_SECRET')
-DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'flowstate-creative-solutions@example.com'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASS')
+    DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER')
