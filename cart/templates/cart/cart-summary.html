@@ -1,0 +1,7 @@
+<ul class="list-unstyled mb-4">
+    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Cart Subtotal </strong><strong>£{{ total|floatformat:2 }}</strong></li>
+    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Discount</strong><strong>£{{ discount|floatformat:2 }}</strong></li>
+    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Grand Total</strong>
+        <h5 class="font-weight-bold">£{{ grand_total|floatformat:2 }}</h5>
+    </li>
+</ul>
