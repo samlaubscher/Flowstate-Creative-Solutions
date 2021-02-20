@@ -34,6 +34,7 @@
                                     <th scope="col" class="bg-light border-0 p-2 px-3">Date Purchased</th>
                                     <th scope="col" class="bg-light border-0 p-2 px-3">Price</th>
                                     <th scope="col" class="bg-light border-0 p-2 px-3">Download</th>
+                                    <th scope="col" class="bg-light border-0 p-2 px-3">Review</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -55,6 +56,9 @@
                                             </td>
                                             <td class="py-3">
                                                 <a id="remove_{{ item.item_id }}" class="text-dark remove-item"><i class="fa fa-download"></i></a>
+                                            </td>
+                                            <td class="py-3">
+                                                <a id="review_{{ item.item_id }}" class="text-dark review-item" href="{% url 'add_product_review' item.product.id %}"><i class="fa fa-edit"></i></a>
                                             </td>
                                         </tr>
                                     {% endfor %}
