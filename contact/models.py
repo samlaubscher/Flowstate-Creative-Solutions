@@ -37,7 +37,7 @@ class Contact(models.Model):
         null=False,
         blank=False,
     )
-    main_message = models.CharField(
+    main_message = models.TextField(
         max_length=3000,
         null=False,
         blank=False,
