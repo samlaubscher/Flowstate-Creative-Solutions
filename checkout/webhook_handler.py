@@ -16,7 +16,7 @@ class StripeWH_Handler:
 
     def __init__(self, request):
         self.request = request
-    
+
     def _send_confirmation_email(self, order):
         """ Send the user a confirmation email"""
         cust_email = order.email
@@ -39,7 +39,7 @@ class StripeWH_Handler:
 
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
-        status=200)
+            status=200)
 
     def handle_payment_intent_succeeded(self, event):
         """ Handle the payment_intent.succeeded webhook from Stripe """
@@ -73,7 +73,8 @@ class StripeWH_Handler:
         if order_exists:
             self._send_confirmation_email(order)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in the database',
+                content=f'Webhook received: {event["type"]} | SUCCESS: \
+                    Verified order already in the database',
                 status=200)
         else:
             order = None
@@ -96,16 +97,18 @@ class StripeWH_Handler:
             except Exception as e:
                 if order:
                     order.delete()
-                return HttpResponse(content=f'Webhook received: {event["type"]} | ERROR: {e}',
-                status=500)
+                return HttpResponse(content=f'Webhook received: \
+                    {event["type"]} | ERROR: {e}',
+                                    status=500)
         self._send_confirmation_email(order)
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
+            content=f'Webhook received: {event["type"]} | SUCCESS:\
+                 Created order in webhook',
             status=200)
 
     def handle_payment_intent_payment_failed(self, event):
         """ Handle the payment_intent.payment_failed webhook from Stripe """
 
         return HttpResponse(
-            content=f'Webhook received: {event["type"]}', 
+            content=f'Webhook received: {event["type"]}',
             status=200)

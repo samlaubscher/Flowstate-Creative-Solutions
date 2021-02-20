@@ -1,4 +1,6 @@
-from django.shortcuts import get_object_or_404, redirect, render, reverse, HttpResponse
+from django.shortcuts import (
+    get_object_or_404, redirect, render, reverse, HttpResponse
+)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -58,17 +60,20 @@ def checkout(request):
                 order_line_item.save()
             except Product.DoesNotExist:
                 messages.error(request, (
-                    "One of the products in your cart was not found in the database. "
-                    "We apologise. Please contact us for assistance via the contact page!"
+                    "One of the products in your cart \
+                        was not found in the database. "
+                    "We apologise. Please contact us for \
+                        assistance via the contact page!"
                 ))
                 order.delete()
                 return redirect(reverse('view_cart'))
-        
+
         return redirect(reverse('checkout_success', args=[order.order_number]))
     else:
         cart = request.session.get('cart', {})
         if not cart:
-            messages.error(request, "There's nothing in your cart at the moment")
+            messages.error(request, "There's nothing in your \
+                cart at the moment")
             return redirect(reverse('products'))
 
         current_cart = cart_contents(request)
@@ -109,7 +114,7 @@ def checkout_success(request, order_number):
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
-    
+
     if 'cart' in request.session:
         del request.session['cart']
 

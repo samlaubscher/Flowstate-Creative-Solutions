@@ -35,7 +35,12 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['flowstate-creative-solutions.herokuapp.com', '127.0.0.1', 'localhost', '62e9dc6cce61.ngrok.io']
+ALLOWED_HOSTS = [
+    'flowstate-creative-solutions.herokuapp.com',
+    '127.0.0.1',
+    'localhost',
+    '62e9dc6cce61.ngrok.io'
+]
 
 
 # Application definition
@@ -86,7 +91,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', # required by allauth
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',

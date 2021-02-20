@@ -24,11 +24,9 @@ def cart_contents(request):
             'sku': sku,
             'quantity': quantity,
         })
-    
+
     # need to add discount code algorythm here and adjust grand_total
     # if discount_code in request.POST?
-
-    
 
     grand_total = total
 
