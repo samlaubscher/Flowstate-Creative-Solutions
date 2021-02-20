@@ -33,7 +33,7 @@ def order_history(request, order_number):
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
-        'fromt_profile': True,
+        'from_profile': True,
     }
 
     return render(request, template, context)

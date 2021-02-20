@@ -68,6 +68,29 @@
                     </form>
                 </div>
             </div>
+            <div class="col-12">
+                <h3 class="text-center">Reviews</h3>
+                {% if not review %}
+                    <p>NO REVIEWS</p>
+                {% else %}
+                    {% for review in review %}
+                        <div class="row">
+                            <div class="col-12 col-md-8 offset-md-2 text-center">
+                                <div class="review-container p-2 my-2 border-black">
+                                    <p class="review-body">{{ review.body }}</p>
+                                    <p class="text-muted my-0">Review left by <strong>{{ review.user }}</strong> on {{ review.timestamp }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <a href="{% url 'add_product_review' product.id %}" class="btn btn-outline-black rounded-0 mt-5">
+                    <span class="icon">
+                        <i class="fas fa-plus"></i>
+                    </span>
+                    <span class="text-uppercase">Add review</span>
+                </a>
+            </div>
         </div>
     </div>
 {% endblock %}

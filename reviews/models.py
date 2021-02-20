@@ -16,4 +16,4 @@ class Review(models.Model):
         ordering = ['timestamp']
 
     def __str__(self):
-        return 'Review {} by {}'.format(self.body, self.username)
+        return 'Review {} by {}'.format(self.body, self.user)

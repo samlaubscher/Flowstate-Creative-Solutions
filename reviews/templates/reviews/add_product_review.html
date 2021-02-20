@@ -23,6 +23,11 @@
             </div>
         </div>
         <div class="row">
-           
+            <form class="review" method="POST" action="{% url 'add_product_review' product.id %}">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <a href="{% url 'home' %}" class="btn btn-outline-black rounded-0">Home</a>
+                <button class="primaryAction" type="submit">Submit Review</button>
+            </form>
         </div>
 {% endblock %}
