@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4 text-center">Leave A Review</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <form class="review" method="POST" action="{% url 'add_product_review' product.id %}">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <a href="{% url 'home' %}" class="btn btn-outline-black rounded-0">Home</a>
+                <button class="primaryAction" type="submit">Submit Review</button>
+            </form>
+        </div>
+{% endblock %}
