@@ -11,7 +11,6 @@ class ContactForm(forms.ModelForm):
             'contact_motive',
             'product_sku',
             'name',
-            'user',
             'email',
             'main_message',
         ]

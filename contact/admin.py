@@ -6,7 +6,6 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = (
         'contact_motive',
         'product_sku',
-        'user',
         'email',
         'main_message',
         'responded',

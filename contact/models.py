@@ -2,10 +2,10 @@ from django.db import models
 
 
 CONTACT_MOTIVES = (
-    ('general_enquiry', 'GENERAL ENQUIRY'),
-    ('product_technical_assistance', 'PRODUCT TECHNICAL ASSISTANCE'),
-    ('product_suggestion', 'PRODUCT SUGGESTION'),
-    ('general_feedback', 'GENERAL FEEDBACK'),
+    ('general_enquiry', 'General Enquiry'),
+    ('product_technical_assistance', 'Product Technical Assistance'),
+    ('product_suggestion', 'Product Suggestion'),
+    ('general_feedback', 'General Feedback'),
 )
 
 
@@ -28,11 +28,6 @@ class Contact(models.Model):
         blank=True,
     )
     name = models.CharField(
-        max_length=50,
-        null=True,
-        blank=True,
-    )
-    user = models.CharField(
         max_length=50,
         null=False,
         blank=False,
