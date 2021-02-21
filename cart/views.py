@@ -1,13 +1,28 @@
 from django.shortcuts import get_object_or_404, render, redirect, HttpResponse
 from django.contrib import messages
+from django.conf import settings
 
 from products.models import Product
 
 
 def view_cart(request):
-    """ A view to render the cart contents page """
+    """
+    A view to render the cart contents page with discount logic
+    """
 
-    return render(request, 'cart/cart.html')
+    discount = False
+    if request.GET:
+        if 'dc' in request.GET:
+            code = request.GET['dc'].upper()
+            if code == settings.DISCOUNT_CODE:
+                discount = True
+
+    template = 'cart/cart.html'
+    context = {
+        'discount': discount,
+    }
+
+    return render(request, template, context)
 
 
 def add_to_cart(request, item_id):

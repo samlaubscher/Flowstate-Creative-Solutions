@@ -39,7 +39,7 @@ ALLOWED_HOSTS = [
     'flowstate-creative-solutions.herokuapp.com',
     '127.0.0.1',
     'localhost',
-    '62e9dc6cce61.ngrok.io'
+    'edb7ec92e17a.ngrok.io'
 ]
 
 
