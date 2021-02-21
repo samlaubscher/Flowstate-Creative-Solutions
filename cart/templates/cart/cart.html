@@ -30,21 +30,7 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <div class="bg-light rounded-pill px-4 py-2 text-uppercase font-weight-bold">Discount code</div>
-                                <p class="font-italic mb-4">If you have a coupon code, please enter it in the box below</p>
-                                <div class="input-group mb-4 border rounded-pill p-2">
-                                    <input type="text" placeholder="Discount code" aria-describedby="button-addon3" class="form-control border-0">
-                                    <div class="input-group-append border-0">
-                                        <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-percent"></i></button>
-                                    </div>
-                                </div>
-                                <!-- this needs to be changed -->
-                                {% if discount_code %}
-                                    <p class="mb-1 text-danger text-center">
-                                        You have discount code <strong>{{ discount_code }}</strong> applied!
-                                    </p>
-                                {% endif %}
-                                <!-- end -->
+                                {% include 'cart/discount-form.html' %}
                             </div>
                         </div>
                         <div class="row">
@@ -113,23 +99,7 @@
                         </table>
                         <div class="row mx-0 bg-white rounded">
                             <div class="col-lg-6">
-                                <div class="bg-light rounded-pill px-4 py-2 text-uppercase font-weight-bold">Discount code</div>
-                                <div class="p-4">
-                                    <p class="font-italic mb-4">If you have a coupon code, please enter it in the box below</p>
-                                    <div class="input-group mb-4 border rounded-pill p-2">
-                                        <input type="text" placeholder="Discount code" aria-describedby="button-addon3" class="form-control border-0">
-                                        <div class="input-group-append border-0">
-                                            <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-percent mr-2"></i>Apply discount</button>
-                                        </div>
-                                    </div>
-                                    <!-- this needs to be changed -->
-                                    {% if discount_code %}
-                                        <p class="mb-1 text-danger text-center">
-                                            You have discount code <strong>{{ discount_code }}</strong> applied!
-                                        </p>
-                                    {% endif %}
-                                    <!-- end -->
-                                </div>
+                                {% include 'cart/discount-form.html' %}
                             </div>
                             <div class="col-lg-6">
                                 <div class="bg-light rounded-pill px-4 py-2 text-uppercase font-weight-bold">Order summary </div>

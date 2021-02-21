@@ -42,7 +42,6 @@ def checkout(request):
         order = Order(
             username=request.user.username,
             email=request.user.email,
-            discount_code='discount-code-example'
             )
         pid = request.POST.get('client_secret').split('_secret')[0]
         order.stripe_pid = pid
