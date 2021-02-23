@@ -10,12 +10,15 @@ def view_cart(request):
     A view to render the cart contents page with discount logic
     """
 
+    #### DISCOUNT SECTION - POTENTIALLY REMOVE
     discount = False
     if request.GET:
         if 'dc' in request.GET:
             code = request.GET['dc'].upper()
             if code == settings.DISCOUNT_CODE:
                 discount = True
+                request.session['discount_code'] = code
+    #####
 
     template = 'cart/cart.html'
     context = {

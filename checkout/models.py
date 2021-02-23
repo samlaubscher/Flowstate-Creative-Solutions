@@ -27,6 +27,17 @@ class Order(models.Model):
     stripe_pid = models.CharField(max_length=254, null=False,
                                   blank=False, default='')
 
+    #### DISCOUNT SECTION - POTENTIALLY REMOVE
+    @property
+    def grand_total_with_dc(self):
+        if self.discount_code:
+            self.discount_total = self.order_total * settings.DISCOUNT_PERCENTAGE / 100
+        else:
+            self.discount_total = 0
+
+        return self.order_total - self.discount_total
+    #### DISCOUNT SECTION - POTENTIALLY REMOVE
+
     def generate_order_number(self):
         """
         Use UUID to generate a uniquely random order number
@@ -40,12 +51,8 @@ class Order(models.Model):
         """
         self.order_total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        if self.discount_code:
-            self.discount_total = self.order_total * \
-                settings.DISCOUNT_PERCENTAGE / 100
-        else:
-            self.discount_total = 0
-        self.grand_total = self.order_total - self.discount_total
+
+        self.grand_total = self.order_total
         self.save()
 
     def save(self, *args, **kwargs):
