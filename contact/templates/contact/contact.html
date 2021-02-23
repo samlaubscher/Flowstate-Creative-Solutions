@@ -30,7 +30,8 @@
                         {{ field | as_crispy_field }}
                     {% endfor %}
                     <div class="text-center">
-                        <button class="btn btn-black text-center" type="submit">Submit</button>
+                        <button class="btn btn-dark rounded-pill py-2 btn-block" type="submit">Submit</button>
+                        <a href="{% url 'home' %}" class="btn btn-light rounded-pill py-2 btn-block"><span class="icon"><i class="fas fa-chevron-left"></i></span> Cancel</a>
                     </div>
                 </form>
             </div>
