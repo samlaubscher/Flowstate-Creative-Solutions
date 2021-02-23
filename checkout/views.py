@@ -39,9 +39,12 @@ def checkout(request):
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
+        discount_code = request.session['discount_code']  # DISCOUNT SECTION - POTENTIALLY REMOVE
+
         order = Order(
             username=request.user.username,
             email=request.user.email,
+            discount_code=discount_code  # DISCOUNT SECTION - POTENTIALLY REMOVE
             )
         pid = request.POST.get('client_secret').split('_secret')[0]
         order.stripe_pid = pid
