@@ -6,6 +6,7 @@ class ReviewAdmin(admin.ModelAdmin):
     list_display = (
         'product',
         'user',
+        'title',
         'body',
         'timestamp',
     )
