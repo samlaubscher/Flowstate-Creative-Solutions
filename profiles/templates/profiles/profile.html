@@ -55,7 +55,7 @@
                                                 <p class="my-0">£{{ item.product.price }}</p>
                                             </td>
                                             <td class="py-3">
-                                                <a id="remove_{{ item.item_id }}" class="text-dark remove-item"><i class="fa fa-download"></i></a>
+                                                <a href="{{ MEDIA_URL }}products/{{ item.product.name }}.txt" id="download_{{ item.item_id }}" class="text-dark download-item" download><i class="fa fa-download"></i></a>
                                             </td>
                                             <td class="py-3">
                                                 <a id="review_{{ item.item_id }}" class="text-dark review-item" href="{% url 'add_product_review' item.product.id %}"><i class="fa fa-edit"></i></a>
