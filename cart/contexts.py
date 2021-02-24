@@ -33,7 +33,7 @@ def cart_contents(request):
         'product_count': product_count,
         'discount': discount,
         'grand_total': grand_total,
-        'discount_code': discount_code,
+        # 'discount_code': discount_code,
     }
 
     return context
