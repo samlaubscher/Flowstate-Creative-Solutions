@@ -22,12 +22,15 @@
                 <hr>
             </div>
         </div>
+        <!-- Review input form -->
         <div class="row">
-            <form class="review" method="POST" action="{% url 'add_product_review' product.id %}">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <a href="{% url 'home' %}" class="btn btn-outline-black rounded-0">Home</a>
-                <button class="primaryAction" type="submit">Submit Review</button>
-            </form>
+            <div class="col-12 col-md-6 offset-md-3">
+                <form class="review" method="POST" action="{% url 'add_product_review' product.id %}">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <a href="{% url 'profile' %}" class="btn btn-light rounded-pill py-2 btn-block"><span class="icon"><i class="fas fa-chevron-left"></i></span> Cancel</a>
+                    <button class="btn btn-dark rounded-pill py-2 btn-block" type="submit">Submit Review</button>
+                </form>
+            </div>
         </div>
 {% endblock %}
