@@ -61,9 +61,9 @@
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
-                                    <span class="text-uppercase">Keep Shopping</span>
+                                    <span class="text-uppercase">Back To Shop</span>
                                 </a>
-                                <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block">Add To Cart <span class="icon"><i class="fas fa-cart-plus"></i></span></button>
+                                <button type="submit" class="btn btn-dark rounded-pill py-2 text-uppercase btn-block">Add To Cart <span class="icon"><i class="fas fa-cart-plus"></i></span></button>
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
@@ -74,9 +74,15 @@
             <!-- Reviews section -->
             <div class="col-12 col-md-8 offset-md-2">
                 <div class="bg-light rounded-pill px-4 py-2 text-uppercase text-center font-weight-bold">Product Reviews</div>
-                <div class="p-2">
+                <div class="p-0">
                     {% if not review %}
-                        <p>NO REVIEWS</p>
+                        <div class="row">
+                            <div class="col-10 offset-1 text-center">
+                                <hr>
+                                <p class="text-center text-muted ">No reviews</p>
+                                <hr>
+                            </div>
+                        </div>
                     {% else %}
                         {% for review in review %}
                             <div class="row">
@@ -92,7 +98,7 @@
                         {% endfor %}
                     {% endif %}
                 </div>
-                <p class="text-muted mb-2 text-center">Reviews can be left for purchased products via purchase history in My Profile.</p>
+                <p class="text-muted mb-3 text-center"><em>Reviews can be left for purchased products via purchase history in My Profile.</em></p>
             </div>
         </div>
     </div>
