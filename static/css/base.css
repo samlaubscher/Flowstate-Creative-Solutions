@@ -116,6 +116,15 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 
+footer svg {
+    position: absolute;
+}
+
+.footer-text {
+    position: absolute;
+
+}
+
 /* ----------------------------- Bootsrap Toasts */
 
 .message-container {
