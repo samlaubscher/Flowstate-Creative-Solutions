@@ -312,18 +312,18 @@ footer svg {
 
 /* -------------------------------- Media Queries */
 
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
+@media (max-width: 640px) {
+    .display-3.logo-font {
+        font-size: 2rem;
     }
 
-    .header-container {
-        padding-top: 128px;
+    .display-5.logo-font {
+        font-size: 1rem;
+    }
+
+    .shop-now-button {
+        padding: 0.8rem 1rem;
+        min-width: 157px;
     }
 }
 
@@ -333,12 +333,29 @@ footer svg {
         padding-top: 117px;
     }
 
+    .image-container {
+        padding-top: 25px;
+    }
+
     body {
-        height: calc(100vh - 117px);
+        height: calc(100vh);
     }
 
     .display-4.logo-font.text-black {
         font-size: 2rem;
+    }
+
+    .display-3.logo-font {
+        font-size: 3rem;
+    }
+
+    .display-5.logo-font {
+        font-size: 1.1rem;
+    }
+
+    .shop-now-button {
+        padding: 0.8rem 1rem;
+        min-width: 157px;
     }
 
     .nav-link {
@@ -363,6 +380,21 @@ footer svg {
     .btn.btn-black.rounded-0.btn-lg {
         padding: .375rem .375rem;
         font-size: .75rem;
+    }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 128px;
     }
 }
 
