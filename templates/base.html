@@ -145,8 +145,21 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3ea6eb" fill-opacity="0.1" d="M0,64L60,74.7C120,85,240,107,360,101.3C480,96,600,64,720,74.7C840,85,960,139,1080,144C1200,149,1320,107,1380,85.3L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3ea6eb" fill-opacity="0.2" d="M0,64L80,101.3C160,139,320,213,480,234.7C640,256,800,224,960,186.7C1120,149,1280,107,1360,85.3L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
 
+            <div class="footer-text col-4 text-center">
+                <p>
+                    <a href="{% url 'about' %}" class="text-white d-block">
+                        About
+                    </a>
+                </p>
+                <p>
+                    <a href="{% url 'contact' %}" class="text-white d-block">
+                        Contact
+                    </a>
+                </p>
+            </div>
+
             <!--- Social icons -->
-            <div class="footer-text col-12 text-center">
+            <div class="footer-text col-4 offset-4 text-center">
                 <div class="social-links">
                     <!-- Facebook -->
                     <a class="px-3" href="https://www.facebook.com" target="_blank" rel="noopener">
@@ -163,6 +176,11 @@
                 </div>
                 <!--- Copyright info and company name -->
                 <p class="text-white">© 2021 | Flowstate Creative Solutions</p>
+            </div>
+
+            <div class="footer-text col-4 offset-8 text-center">
+                <p class="text-white">Email:</p>
+                <a href="mailto:josh.flowstate@gmail.com" class="text-white">josh.flowstate@gmail.com</a>
             </div>
         </footer>
 
