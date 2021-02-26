@@ -328,7 +328,7 @@ footer svg {
 }
 
 /* pad the top when navbar collapsed on mobile */
-@media (max-width: 991px) {
+@media (min-width: 641px) and (max-width: 991px) {
     .header-container {
         padding-top: 117px;
     }
@@ -365,10 +365,6 @@ footer svg {
     .navbar-toggler {
         padding: .6rem .6rem;
         font-size: 1rem;
-    }
-
-    #discount-banner h4 {
-        font-size: .9rem;
     }
 
     .btn.btn-outline-black.rounded-0,
