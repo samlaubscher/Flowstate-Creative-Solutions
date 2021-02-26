@@ -1,19 +1,19 @@
 <div class="bg-light rounded-pill px-4 py-2 text-uppercase font-weight-bold">Discount code</div>
 <div class="p-4">
-    <p class="font-italic mb-4">If you have a coupon code, please enter it in the box below</p>
+    <p class="font-italic mb-4">If you have a discount code, please enter it in the box below</p>
     <form method="GET" action="{% url 'view_cart' %}?dc={{ discount.value }}">
         <div class="input-group mb-4 border rounded-pill p-2">
-            <input type="text" name="dc" placeholder="Enter Code" aria-describedby="dc" class="form-control border-0"
+            <input type="text" name="dc" placeholder="Enter Here" aria-describedby="dc" class="form-control border-0"
                 {% if discount %} value="{{ discount_code }}"{% endif %}>
             <div class="input-group-append border-0">
-                <button id="dc" type="submit" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-percent mr-2"></i>Apply discount</button>
+                <button id="dc" type="submit" class="btn btn-dark px-4 rounded-pill text-uppercase"><i class="fa fa-percent mr-2"></i>Apply discount</button>
             </div>
         </div>
     </form>
     <!-- this needs to be changed -->
     {% if not discount %}
         <p class="mb-1 text-danger text-center">
-            You have discount code <strong>{{ discount_code }}</strong> available!
+            You have no discount code available!
         </p>
     {% else %}
         <p class="mb-1 text-success text-center">
