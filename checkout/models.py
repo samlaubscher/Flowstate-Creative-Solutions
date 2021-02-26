@@ -10,8 +10,8 @@ from profiles.models import UserProfile
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-                                     null=True, blank=False,
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE,
+                                     null=False, blank=False,
                                      related_name='orders')
     username = models.CharField(max_length=32, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
