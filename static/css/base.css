@@ -116,14 +116,48 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 
+/* ----------------------------------- Footer */
+
+footer {
+    position: relative;
+}
+
 footer svg {
     position: absolute;
 }
 
 .footer-text {
     position: absolute;
-
+    top: 200px;
 }
+
+.social-links a {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.social-links a:hover {
+    color: #6c757d;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* ------------- animation from https://zcreativelabs.com/blog/how-to-add-svg-waves-to-your-next-web-project/ */
+
+@keyframes animateWave {
+    0% {
+      transform: scale(1,0);
+    }
+    100% {
+      transform: scale(1,1);
+    }
+  }
+
+  footer > svg {
+    display: block;
+    transform-origin: bottom;
+    animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
 
 /* ----------------------------- Bootsrap Toasts */
 
