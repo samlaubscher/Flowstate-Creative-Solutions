@@ -30,8 +30,9 @@
             <!-- Product Information -->
             <div class="col-12 col-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
-                    <p class="mb-0">{{ product.name }}</p>
+                    <h2 class="display-5 mb-0 font-weight-bold">{{ product.name }}</h2>
                     <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
+                    <p class="small mb-0 text-left text-muted">SKU:{{ product.sku }}</p>
                     {% if product.category %}
                         <p class="small mt-1 mb-0">
                             <a href="{% url 'products' %}?category={{ product.category.name }}" class="text-muted">
