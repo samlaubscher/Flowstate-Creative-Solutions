@@ -94,6 +94,12 @@ body {
     height: 100%;
 }
 
+.product-card-name,
+.product-card-name:hover {
+    text-decoration: none;
+    color: #555;
+}
+
 a.category-badge > span.badge:hover {
     background: #3ea6eb !important;
     color: #fff !important;
@@ -106,6 +112,7 @@ a.category-badge > span.badge:hover {
     bottom: 10px;
     left: 10px;
     z-index: 999;
+    border: 1px solid #555;
 }
 
 .btt-link,
