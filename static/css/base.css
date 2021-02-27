@@ -362,6 +362,10 @@ footer svg {
     .header-container {
         padding-top: 128px;
     }
+
+    .image-container {
+        padding-top: 30px;
+    }
 }
 
 /* Slightly larger container on xl screens */
