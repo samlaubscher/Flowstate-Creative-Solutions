@@ -41,6 +41,14 @@ body {
     width: fit-content;
 }
 
+.brand-color {
+    color: #3ea6eb;
+}
+
+.brand-color:hover {
+    color: #0464ca;
+}
+
 .shop-now-button {
     background: white;
     color: black;

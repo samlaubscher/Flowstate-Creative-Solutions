@@ -11,7 +11,7 @@
             <div class="input-group">
               <input type="search" class="form-control border-0 bg-light" placeholder="Search our site" aria-describedby="search">
               <div class="input-group-append">
-                <button id="search" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                <button id="search" type="submit" class="btn btn-link brand-color"><i class="fa fa-search"></i></button>
               </div>
             </div>
         </form>
@@ -42,14 +42,14 @@
     </div>
 </li>
 <li class="list-inline-item">
-    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'view_cart' %}">
+    <a class="{% if grand_total %}brand-color font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'view_cart' %}">
         <div class="text-center">
             <div><i class="fas fa-shopping-cart fa-lg"></i></div>
             <p class="my-0">
                 {% if grand_total %}
-                    ${{ grand_total|floatformat:2 }}
+                    £{{ grand_total|floatformat:2 }}
                 {% else %}
-                    $0.00
+                    £0.00
                 {% endif %}
             </p>
         </div>
