@@ -4,6 +4,7 @@ from .views import checkout, checkout_success
 
 
 class CheckoutPageTests(TestCase):
+    """ Checkout tests for non logged in users """
 
     def test_checkout_redirect_status_code(self):
         url = reverse('checkout')
