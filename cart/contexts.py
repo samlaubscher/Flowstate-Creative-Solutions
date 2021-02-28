@@ -8,8 +8,6 @@ def cart_contents(request):
     cart_items = []
     total = 0
     product_count = 0
-    discount = 0
-    # discount_code = request.session['discount_code'] #### DISCOUNT SECTION - POTENTIALLY REMOVE
     cart = request.session.get('cart', {})
 
     for item_id, quantity in cart.items():
@@ -31,7 +29,6 @@ def cart_contents(request):
         'cart_items': cart_items,
         'total': total,
         'product_count': product_count,
-        'discount': discount,
         'grand_total': grand_total,
     }
 
