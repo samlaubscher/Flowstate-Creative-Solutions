@@ -149,7 +149,7 @@ footer svg {
 
 .social-links a {
     font-size: 2rem;
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 
 .social-links a:hover {
